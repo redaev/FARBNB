@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <% @flats.each do |flat| %>
+    <h1><%= flat.name %></h1>
+    <p><%= flat.planet%></p>
+    <%= flat.number_of_guests %>
+    <%= flat.price %>
+    <% end %>
+
+
+
+    </div>
+  </div>
+</div>
