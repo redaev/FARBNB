@@ -1,14 +1,27 @@
+
+
+
 <div class="container">
   <div class="row">
     <div class="col">
-    <% @flats.each do |flat| %>
-    <h1><%= flat.name %></h1>
-    <p><%= flat.planet%></p>
-    <%= flat.number_of_guests %>
-    <%= flat.price %>
+
+    <div class="d-flex flex-row">
+      <% @flats.each do |flat| %>
+        <div class="card" style="width: 18rem;">
+        <img src="<%= asset_path('villa.jpg') %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.planet %></p>
+          <i class="fa-solid fa-euro-sign"></i><%= flat.price %>
+          <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %>
+        </div>
+      <div class="card-link">
+        <%= link_to "More info", flat_path(flat.id) %>
+      </div>
+      </div>
     <% end %>
-
-
+  </div>
+</div>
 
     </div>
   </div>
