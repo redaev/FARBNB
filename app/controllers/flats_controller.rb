@@ -7,6 +7,10 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
   end
 
+  def research
+    @flats = Flat.where(planet: params[:planet], number_of_guests: params[:number_of_guests])
+  end
+
   def new
   end
 

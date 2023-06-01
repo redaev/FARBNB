@@ -2,20 +2,8 @@
   <div class="row">
     <div class="col">
 
-    <%= form_tag research_flats_path, method: :get do %>
-  <div class="form-group">
-    <%= label_tag :planet, "Planet :" %>
-    <%= text_field_tag :planet, params[:planet], class: "form-control", placeholder: "Planet" %>
-  </div>
-  <div class="form-group">
-    <%= label_tag :number_of_guests, "Number of guests :" %>
-    <%= text_field_tag :number_of_guests, params[:number_of_guests], class: "form-control", placeholder: "Number of guests" %>
-  </div>
-  <%= submit_tag "Research", class: "btn btn-primary" %>
-<% end %>
-
-
-    <div class="d-flex flex-row">
+<div class="d-flex flex-row">
+    <div id="flats">
       <% @flats.each do |flat| %>
         <div class="card" style="width: 18rem;">
         <img src="<%= asset_path('villa.jpg') %>" class="card-img-top" alt="...">
@@ -26,12 +14,18 @@
           <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %>
         </div>
       <div class="card-link">
-        <%= link_to "More info", flat_path(flat.id) %>
+        <%= link_to "Show results", flat %>
       </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
+
+
+
+
+
 
     </div>
   </div>
