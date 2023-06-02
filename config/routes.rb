@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     collection do
       get :research
     end
+    resources :bookings, only: [:new, :create]
+    get '/confirmation', to: 'bookings#confirmation', as: 'confirmation'
   end
 end
