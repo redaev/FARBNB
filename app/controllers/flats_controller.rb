@@ -13,22 +13,22 @@ class FlatsController < ApplicationController
   end
 
   def new
+    @flat = Flat.new
   end
 
   def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @flat = Flat.new(flat_params)
+    @flat.owner_id = current_user.id
+    if @flat.save
+      redirect_to flats_path(@flat)
+    else
+      render :new
+    end
   end
 
   private
 
   def flat_params
+    params.require(:flat).permit(:name, :planet, :description, :price, :number_of_guests)
   end
 end
