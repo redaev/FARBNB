@@ -9,12 +9,29 @@ body {
   height: 300px;
   display: flex;
   margin-bottom: 20px;
+
 }
 
 .card-body {
-  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+
+  display: block;
  }
 
  .card {
   margin-right: 20px;
+  background: #ffffff;
  }
+ .card-bottom{
+  vertical-align: bottom;
+ }
+ a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+ }
+i{
+  color: #DD58D6;
+  margin-right: 8px;
+
+}
