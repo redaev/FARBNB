@@ -1,0 +1,23 @@
+.show-header{
+  padding: 10px;
+}
+
+.show-img{
+  border-radius: 8px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.show-card-body{
+  padding-top: 48px;
+  padding-bottom: 24px;
+  border-bottom:solid thin  #DD58D6;
+}
+.undertitle-info{
+  display: flex;
+}
+.undertitle-info-item{
+  margin-right: 16px;
+  padding-right: 16px;
+  border-right:solid thin  #DD58D6;
+}

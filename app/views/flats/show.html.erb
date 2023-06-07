@@ -1,42 +1,38 @@
-<body>
   <div class="container">
     <div class="row">
       <div class="col">
-        <h1 class="card-title"><%= @flat.name %></h1>
-          <h2 class="card-text"><%= @flat.planet %></h2>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= asset_path('map.jpg') %>)">
+        <div class="show-header">
+          <div>
+            <h1 class="card-title"><%= @flat.name %></h1>
+          </div>
+          <div class="undertitle-info">
+            <div class="undertitle-info-item">
+              Planete : <%= @flat.planet %>
             </div>
-
-          <div class="card-body col-6 mb-3">
-            <h2 class="card-title">A bit more about this flat...</h2>
-            <p class="card-text"><%= @flat.description %></p>
+            <div class="undertitle-info-item">
+              For <%= @flat.number_of_guests %> travelers
+            </div class="undertitle-info-item">
+            <div>
+              Price : <%= @flat.price %>€
+            </div>
           </div>
-        </div>
-
-      <div class="flat-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            <%= @flat.number_of_guests %> people
-          </div>
-          <div class="flex ms-3">
-            <%= @flat.price %>€
         </div>
       </div>
-    </div>
+      <div class="show-img" style="background-image:  url(<%= asset_path('villa.png') %>)">
+      </div>
+
+      <div class="show-card-body col-6 mb-3">
+        <p class="card-text"><%= @flat.description %></p>
+      </div>
 
 
- <div class="col text-end">
-    <button type="button" class="btn btn-dark">
-      <li><%= link_to "Create a booking",  new_flat_booking_path(@flat) %></li>
-    </button>
-    </div>
-
-
-
+      <div class="col text-end">
+        <button type="button" class="btn btn-dark">
+          <%= link_to "Create a booking",  new_flat_booking_path(@flat) %>
+        </button>
+      </div>
 
 
     </div>
   </div>
 </div>
-</body>
