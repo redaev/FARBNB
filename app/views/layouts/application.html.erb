@@ -28,7 +28,7 @@
             <%= link_to "Home", "/flats", class: "btn-ghost" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add your flat", "/flats/new", class: "btn-ghost" %>
+            <%= link_to "Add your flat", new_flat_path(@flat), class: "btn-ghost" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "alien1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
