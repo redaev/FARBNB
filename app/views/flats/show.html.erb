@@ -25,7 +25,6 @@
       <div class="show-card-body col-8">
         <p class="card-text"><%= @flat.description %></p>
       </div>
-
   <div class="show-card-booking col-4">
     <div class="card-booking">
       <h6><b><%= @flat.price %> solaris</b> / night</h6>
@@ -43,7 +42,9 @@
     </div>
   </div>
   </div>
-
-    </div>
+<div class="show-card-review col-8">
+  <div class="card-review">
+    <h1>Reviews</h1>
+    <%= render partial: 'reviews/new', locals: { flat: @flat } %>
   </div>
 </div>
