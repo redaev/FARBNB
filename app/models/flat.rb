@@ -4,5 +4,7 @@ class Flat < ApplicationRecord
   validates :price, presence: true
   validates :name, presence: true, uniqueness: true
   validates :planet, presence: true
+  # has_many :reviews, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :bookings
 end
