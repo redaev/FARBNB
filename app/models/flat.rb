@@ -7,4 +7,7 @@ class Flat < ApplicationRecord
   # has_many :reviews, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :bookings
+  has_many :flat_equipments
+  has_many :equipments, through: :flat_equipments
+  accepts_nested_attributes_for :equipments
 end

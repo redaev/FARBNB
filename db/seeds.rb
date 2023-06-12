@@ -9,7 +9,20 @@
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
+Equipment.destroy_all
 puts "Deleting all"
+
+
+puts "Creating equipments list"
+
+equipment_list = ['Stargate', 'Millennium Falcon parking', 'Gamma Washing-Dryer', 'Plasma Pool', 'Adjustable Gravity Gym']
+
+equipment_list.each do |equipment_name|
+  Equipment.create(name: equipment_name)
+end
+
+puts "Equipments list created"
+
 
 users = User.create!([
   {
@@ -65,7 +78,8 @@ flats = Flat.create!([
     owner: users[0],
     name: "Mars Rooftop",
     planet: "Mars",
-    description: "Bienvenue sur notre propriété où vous attend un chalet en bois indépendant avec terrasse privative au milieu des pins. Site privilégié à 15 min de l'astroport, au calme, propice au repos, à la méditation, à l'écriture, à la découverte de Mars (ses marchés, festivals de musique classique...)"
+    description: "Bienvenue sur notre propriété où vous attend un chalet en bois indépendant avec terrasse privative au milieu des pins. Site privilégié à 15 min de l'astroport, au calme, propice au repos, à la méditation, à l'écriture, à la découverte de Mars (ses marchés, festivals de musique classique...)",
+    equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking'])
   },
   {
     number_of_guests: 6,
@@ -73,7 +87,8 @@ flats = Flat.create!([
     owner: users[1],
     name: "Maison dans les arbres",
     planet: "Venus",
-    description: "Bienvenue dans notre grande maison avec piscine, située dans le sud de Venus, à 15 minutes de la faille du pendu."
+    description: "Bienvenue dans notre grande maison avec piscine, située dans le sud de Venus, à 15 minutes de la faille du pendu.",
+    equipments: Equipment.where(name: ['Gamma Washing / Dryer', 'Plasma Pool'])
   },
   {
     number_of_guests: 2,
@@ -81,7 +96,8 @@ flats = Flat.create!([
     owner: users[2],
     name: "Cocoon on the moon",
     planet: "Moon",
-    description: "Situé dans un petit village à 10 mins des plages de Moon-sur-mer. Sur un terrain paysager et forestier de 1,2 ha."
+    description: "Situé dans un petit village à 10 mins des plages de Moon-sur-mer. Sur un terrain paysager et forestier de 1,2 ha.",
+    equipments: [Equipment.find_by(name: 'Adjustable Gravity Gym')]
   }
 ])
 

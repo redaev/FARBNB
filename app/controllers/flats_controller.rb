@@ -29,6 +29,7 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    @equipment = Equipment.all
   end
 
   def create
@@ -44,6 +45,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :planet, :description, :price, :number_of_guests)
+    params.require(:flat).permit(:name, :planet, :description, :price, :number_of_guests, equipment_ids: [])
   end
 end

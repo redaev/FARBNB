@@ -6,6 +6,15 @@
     <%= f.label :price %><i class="fa-brands fa-rebel" style="color: #71a4ac; margin-left: 5px;"></i>
     <%= f.input :price , placeholder: 'Enter the price per nigth', label: false %>
     <%= f.input :number_of_guests, placeholder: 'Enter the number of guests your flight can welcome' %>
+
+    <h4>Select Equipment:</h4>
+    <% @equipment.each do |equipment| %>
+      <div>
+        <%= check_box_tag 'flat[equipment_ids][]', equipment.id, @flat.equipments.include?(equipment) %>
+        <%= label_tag "flat_equipment_ids_#{equipment.id}", equipment.name %>
+      </div>
+    <% end %>
+
     <%= f.submit %>
   <% end %>
 </div>
