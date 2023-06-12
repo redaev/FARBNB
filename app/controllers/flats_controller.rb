@@ -6,6 +6,8 @@ class FlatsController < ApplicationController
   def show
     @flat = Flat.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
+    @reviews = @flat.reviews
   end
 
   def research
