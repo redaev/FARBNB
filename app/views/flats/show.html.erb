@@ -13,7 +13,7 @@
             For <%= @flat.number_of_guests %> travelers
           </div class="undertitle-info-item">
           <div>
-            Price : <%= @flat.price %>€
+            Price : <%= @flat.price %> <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@
       </div>
   <div class="show-card-booking col-4">
     <div class="card-booking">
-      <h6><b><%= @flat.price %> solaris</b> / night</h6>
+      <h6><b><%= @flat.price %> <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i>(solaris) </b> / night</h6>
       <%= form_with(model: [@flat, @booking]) do |form| %>
         <div class="input-group">
           <span class="input-group-text" id="start-date-label">From:</span>
