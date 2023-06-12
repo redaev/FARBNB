@@ -1,25 +1,25 @@
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="show-header">
-          <div>
-            <h1 class="card-title"><%= @flat.name %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="show-header">
+        <div>
+          <h1 class="card-title"><%= @flat.name %></h1>
+        </div>
+        <div class="undertitle-info">
+          <div class="undertitle-info-item">
+            Planete : <%= @flat.planet %>
           </div>
-          <div class="undertitle-info">
-            <div class="undertitle-info-item">
-              Planete : <%= @flat.planet %>
-            </div>
-            <div class="undertitle-info-item">
-              For <%= @flat.number_of_guests %> travelers
-            </div class="undertitle-info-item">
-            <div>
-              Price : <%= @flat.price %>€
-            </div>
+          <div class="undertitle-info-item">
+            For <%= @flat.number_of_guests %> travelers
+          </div class="undertitle-info-item">
+          <div>
+            Price : <%= @flat.price %>€
           </div>
         </div>
       </div>
-      <div class="show-img" style="background-image:  url(<%= asset_path('villa.png') %>)">
-      </div>
+    </div>
+    <div class="show-img" style="background-image:  url(<%= asset_path("#{@flat_images[@flat.id]}") %>)">
+    </div>
 
     <div class="d-flex">
       <div class="show-card-body col-8">
