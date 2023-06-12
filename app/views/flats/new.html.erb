@@ -3,7 +3,8 @@
     <%= f.input :name, placeholder: 'Enter the name of your flat' %>
     <%= f.input :planet, placeholder: 'Enter the planet where your flat is located' %>
     <%= f.input :description, placeholder: 'Enter a description' %>
-    <%= f.input :price, placeholder: 'Enter the price per nigth' %>
+    <%= f.label :price %><i class="fa-brands fa-rebel" style="color: #71a4ac; margin-left: 5px;"></i>
+    <%= f.input :price , placeholder: 'Enter the price per nigth', label: false %>
     <%= f.input :number_of_guests, placeholder: 'Enter the number of guests your flight can welcome' %>
     <%= f.submit %>
   <% end %>
