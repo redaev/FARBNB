@@ -16,6 +16,9 @@
   padding-right: 24px;
   text-align: justify;
 }
+.show-card-body li{
+  margin-bottom: 4px;
+}
 .undertitle-info{
   display: flex;
 }
@@ -40,4 +43,14 @@
   margin-bottom: 10px;
   border-radius: 3px;
   background-color: #FDF1E6;
+}
+.section-infos{
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  border: solid thin #7DACB3;
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  text-transform:uppercase;
+}
+.section-infos h4{
+  margin-bottom: 0;
 }
