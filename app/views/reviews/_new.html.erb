@@ -1,11 +1,11 @@
 <div class="reviews">
-<li class="list-group-item">Average Rating:
-<% if @flat.reviews.any? %>
-  <%= @flat.reviews.average(:rating)&.round(1) %>/5
-<% else %>
-  No reviews yet
-<% end %>
-</li>
+  <li class="list-group-item">Average Rating:
+    <% if @flat.reviews.any? %>
+      <%= @flat.reviews.average(:rating)&.round(1) %>/5
+    <% else %>
+      No reviews yet
+    <% end %>
+  </li>
 
   <ul class="list-group">
     <% if @flat.reviews.any? %>
@@ -30,6 +30,5 @@
       <%= f.label :rating, "Rating" %>
       <%= f.select :rating, options_for_select((1..5).map { |num| ["#{num}/5", num] }), { label: "Select a rating" }, class: "form-control" %>
     </div>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <%= f.submit "Submit review", class: "search_btn mt-2 text-center" %>
   <% end %>
-</div>
