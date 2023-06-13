@@ -42,6 +42,19 @@
     </div>
   </div>
   </div>
+
+  <div class="show-card-body col-8">
+  <p class="card-text"><%= @flat.description %></p>
+
+  <h5>Equipment:</h5>
+  <ul>
+    <% @flat.equipments.each do |equipment| %>
+      <li><%= equipment.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+
 <div class="show-card-review col-8">
   <div class="card-review">
     <h1>Reviews</h1>
