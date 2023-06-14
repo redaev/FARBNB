@@ -1,37 +1,36 @@
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="d-flex flex-row">
-          <div id="flats">
-            <% if @flats.empty? %>
-              <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn-ghost' %></p>
-            <% else %>
-             <h1>Those flats may interest you</h1>
-              <% @flats.each do |flat| %>
-                <%= link_to flat_path(flat.id) do %>
-                  <div class="card" style="width: 18rem;">
-                    <% if flat.images.attached? %>
-                      <%= image_tag url_for(flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
-                    <% else %>
-                     <p>No image available</p>
-                    <% end %>
-                    <div class="card-body">
-                      <h4 class="card-title"><%= flat.name %></h4>
-                      <p class="card-text"><%= flat.planet %></p>
-                      <div class="card-bottom">
-                        <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i><%= flat.price %> per night
-                        <br>
-                        <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
-                      </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <% if @flats.empty? %>
+          <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn-ghost' %></p>
+        <% else %>
+          <div class="flats-header">
+            <h1>Those flats may interest you</h1>
+          </div>
+
+          <div class="d-flex">
+            <% @flats.each do |flat| %>
+              <%= link_to flat_path(flat.id) do %>
+                <div class="card" style="width: 18rem;">
+                  <% if flat.images.attached? %>
+                    <%= image_tag url_for(flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
+                  <% else %>
+                    <p>No image available</p>
+                  <% end %>
+                  <div class="card-body">
+                    <h4 class="card-title"><%= flat.name %></h4>
+                    <p class="card-text"><%= flat.planet %></p>
+                    <div class="card-bottom">
+                      <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i><%= flat.price %> per night
+                      <br>
+                      <i class="fa-solid fa-user-group" style="color: #71a4ac;"></i><%= flat.number_of_guests %> travelers
                     </div>
                   </div>
-                <% end %>
+                </div>
               <% end %>
             <% end %>
           </div>
-        </div>
-      </div>
+        <% end %>
     </div>
   </div>
-</body>
+</div>
