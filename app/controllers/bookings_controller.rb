@@ -16,6 +16,10 @@ class BookingsController < ApplicationController
   def confirmation
   end
 
+  def dashboard
+    @bookings = current_user.bookings.includes(:flat)
+  end
+
   private
 
   def booking_params

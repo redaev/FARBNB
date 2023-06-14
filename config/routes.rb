@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
     resources :bookings, only: [:new, :create]
     get '/confirmation', to: 'bookings#confirmation', as: 'confirmation'
+    get '/dashboard', to: 'bookings#dashboard', as: 'dashboard'
     resources :reviews, only: [:new, :create]
   end
 end

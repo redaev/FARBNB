@@ -34,6 +34,7 @@
             <%= image_tag "alien1.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Connexion", " /users/sign_in", class: "dropdown-item" %>
+              <%= link_to "Account", "  /flats/:flat_id/dashboard", class: "dropdown-item" %>
               <%= link_to "Log out", "/users/sign_out", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
