@@ -18,7 +18,15 @@
         </div>
       </div>
     </div>
-    <div class="show-img" style="background-image:  url(<%= asset_path("#{@flat_images[@flat.id]}") %>)">
+
+    <% @flat.images.each do |image| %>
+      <div class="show-img">
+        <%= image_tag(image) %>
+      </div>
+    <% end %>
+
+
+    <div class="show-img" style="<%= @flat.images.attached? ? "background-image: url(#{url_for(@flat.images.first)})" : "" %>">
     </div>
 
     <div class="d-flex">

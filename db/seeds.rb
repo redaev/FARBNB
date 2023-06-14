@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+FlatEquipment.destroy_all
 Booking.destroy_all
 Flat.destroy_all
 User.destroy_all
 Equipment.destroy_all
 puts "Deleting all"
+
+
 
 
 puts "Creating equipments list"
@@ -71,37 +74,44 @@ puts "Created #{User.count} users"
 
 puts "Creating flats"
 
-flats = Flat.create!([
-  {
-    number_of_guests: 4,
-    price: 245,
-    owner: users[0],
-    name: "Mars Rooftop",
-    planet: "Mars",
-    description: "Bienvenue sur notre propriété où vous attend un chalet en bois indépendant avec terrasse privative au milieu des pins. Site privilégié à 15 min de l'astroport, au calme, propice au repos, à la méditation, à l'écriture, à la découverte de Mars (ses marchés, festivals de musique classique...)",
-    equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking'])
-  },
-  {
-    number_of_guests: 6,
-    price: 658,
-    owner: users[1],
-    name: "Maison dans les arbres",
-    planet: "Venus",
-    description: "Bienvenue dans notre grande maison avec piscine, située dans le sud de Venus, à 15 minutes de la faille du pendu.",
-    equipments: Equipment.where(name: ['Gamma Washing / Dryer', 'Plasma Pool'])
-  },
-  {
-    number_of_guests: 2,
-    price: 190,
-    owner: users[2],
-    name: "Cocoon on the moon",
-    planet: "Moon",
-    description: "Situé dans un petit village à 10 mins des plages de Moon-sur-mer. Sur un terrain paysager et forestier de 1,2 ha.",
-    equipments: [Equipment.find_by(name: 'Adjustable Gravity Gym')]
-  }
-])
+flat1 = Flat.create!(
+  number_of_guests: 4,
+  price: 245,
+  owner: users[0],
+  name: "Mars Rooftop",
+  planet: "Mars",
+  description: "Bienvenue sur notre propriété où vous attend un chalet en bois indépendant avec terrasse privative au milieu des pins. Site privilégié à 15 min de l'astroport, au calme, propice au repos, à la méditation, à l'écriture, à la découverte de Mars (ses marchés, festivals de musique classique...)",
+  equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking'])
+)
 
-puts "Created #{Flat.count} flats"
+flat1.images.attach(io: File.open(Rails.root.join('app/assets/images/flat1.png')), filename: 'flat1.png')
+
+flat2 = Flat.create!(
+  number_of_guests: 6,
+  price: 658,
+  owner: users[1],
+  name: "Maison dans les arbres",
+  planet: "Venus",
+  description: "Bienvenue dans notre grande maison avec piscine, située dans le sud de Venus, à 15 minutes de la faille du pendu.",
+  equipments: Equipment.where(name: ['Gamma Washing / Dryer', 'Plasma Pool'])
+)
+
+flat2.images.attach(io: File.open(Rails.root.join('app/assets/images/flat2.png')), filename: 'flat2.png')
+
+flat3 = Flat.create!(
+  number_of_guests: 2,
+  price: 190,
+  owner: users[2],
+  name: "Cocoon on the moon",
+  planet: "Moon",
+  description: "Situé dans un petit village à 10 mins des plages de Moon-sur-mer. Sur un terrain paysager et forestier de 1,2 ha.",
+  equipments: [Equipment.find_by(name: 'Adjustable Gravity Gym')]
+)
+
+flat3.images.attach(io: File.open(Rails.root.join('app/assets/images/flat3.png')), filename: 'flat3.png')
+
+
+puts "Created flats"
 
 puts "Creating bookings"
 Booking.create!([
@@ -109,19 +119,19 @@ Booking.create!([
     arrival_date: DateTime.new(2023,9,1,17),
     departure_date: DateTime.new(2023,9,4,17),
     user: users[4],
-    flat: flats[0]
+    flat: flat1
   },
   {
     arrival_date: DateTime.new(2023,5,7,17),
     departure_date: DateTime.new(2023,5,16,17),
     user: users[3],
-    flat: flats[1]
+    flat: flat2
   },
   {
     arrival_date: DateTime.new(2023,3,8,17),
     departure_date: DateTime.new(2023,3,18,17),
     user: users[3],
-    flat: flats[2]
+    flat: flat3
   }
 ])
 puts "Created #{Booking.count} bookings"
