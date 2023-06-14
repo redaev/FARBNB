@@ -115,7 +115,36 @@ flat3 = Flat.create!(
 
 flat3.images.attach(io: File.open(Rails.root.join('app/assets/images/flat3.png')), filename: 'flat3.png')
 
+flat4 = Flat.create!(
+  number_of_guests: 3,
+  price: 320,
+  owner: users[2],
+  name: "Nest with view",
+  planet: "Pluton",
+  description: "Step into the futuristic embrace of the Pluton Flat with View, a pinnacle of modern living amidst the celestial beauty of the cosmos. Nestled within a gleaming metropolis on a distant extraterrestrial colony, this immaculate abode offers an unparalleled experience for discerning space-traveling tenants. Boasting floor-to-ceiling windows that unveil awe-inspiring vistas of the enigmatic Pluto, prepare to be mesmerized by the ethereal dance of distant stars. This sleek sanctuary features state-of-the-art amenities, smart home integration, and a seamless blend of minimalist design and cosmic elegance. Embark on an otherworldly living adventure in the Pluton Flat with View, where the boundaries of reality and imagination converge.",
+  equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking', 'Adjustable Gravity Gym'])
+)
 
+flat4.images.attach(io: File.open(Rails.root.join('app/assets/images/flat4.jpg')), filename: 'flat4.jpg')
+
+flat5 = Flat.create!(
+  number_of_guests: 8,
+  price: 570,
+  owner: users[0],
+  name: "Ring Dream",
+  planet: "Saturn",
+  description: "Welcome to the extraordinary world of Saturn Ring, where cosmic elegance meets celestial living. Nestled within the ethereal beauty of Saturn's iconic rings, this futuristic dwelling transports you to a realm beyond imagination.
+  Step into a sanctuary where gravity-defying architecture seamlessly blends with futuristic technology. The minimalist design of the flat creates a sense of tranquility, accentuated by panoramic views of the glistening rings stretching across the vast expanse of space.
+
+  Equipped with advanced holographic interfaces, the Flat on Saturn Ring offers a seamless fusion of convenience and innovation. Immerse yourself in virtual environments or unwind in the zero-gravity relaxation pod, allowing your mind to wander amidst the stars.
+
+  Indulge in celestial cuisine as you utilize the molecular gastronomy kitchen or sip on cosmic cocktails while overlooking the magnificent spectacle of Saturn's radiant colors. And when it's time to rest, retire to the luxuriously furnished bedroom where you can gaze at Saturn's majestic presence through a transparent dome ceiling.
+
+  Experience the pinnacle of extraterrestrial living with Saturn Ring – a place where dreams take flight among the celestial wonders of the cosmos.",
+  equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking', 'Adjustable Gravity Gym'])
+)
+
+flat5.images.attach(io: File.open(Rails.root.join('app/assets/images/flat5.jpg')), filename: 'flat5.jpg')
 puts "Created flats"
 
 puts "Creating bookings"
