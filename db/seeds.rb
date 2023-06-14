@@ -18,7 +18,7 @@ puts "Deleting all"
 
 puts "Creating equipments list"
 
-equipment_list = ['Stargate', 'Millennium Falcon parking', 'Gamma Washing-Dryer', 'Plasma Pool', 'Adjustable Gravity Gym']
+equipment_list = ['Stargate', 'Millennium Falcon parking', 'Gamma Washing-Dryer', 'Plasma Pool', 'Adjustable Gravity Gym', 'AI home system', 'Holographic cinema room', 'Advanced recycling and waste management system']
 
 equipment_list.each do |equipment_name|
   Equipment.create(name: equipment_name)
@@ -145,6 +145,44 @@ flat5 = Flat.create!(
 )
 
 flat5.images.attach(io: File.open(Rails.root.join('app/assets/images/flat5.jpg')), filename: 'flat5.jpg')
+
+flat6 = Flat.create!(
+  number_of_guests: 4,
+  price: 300,
+  owner: users[1],
+  name: "Skyline Residence",
+  planet: "Venus",
+  description: "The Venus Skyline Residence is a unique apartment located on the captivating shores of the planet Venus. With its futuristic architecture and breathtaking views of the interstellar horizon, this apartment offers a luxurious getaway for space adventure enthusiasts.
+  The spacious and contemporary living spaces, sleek lines, large panoramic windows, and high-tech amenities make this place a true urban paradise in an extraterrestrial environment. Discover the cosmic beauty of Venus from your own residence in the sky.",
+  equipments: Equipment.where(name: ['Stargate', 'Holographic cinema room', 'AI home system'])
+)
+
+flat6.images.attach(io: File.open(Rails.root.join('app/assets/images/flat6.jpg')), filename: 'flat6.jpg')
+
+flat7 = Flat.create!(
+  number_of_guests: 2,
+  price: 190,
+  owner: users[1],
+  name: "Tiny House",
+  planet: "Uranus",
+  description: "The Uranus Tiny House is an extraordinary dwelling nestled amidst the captivating landscapes of the planet Uranus. With its innovative design and breathtaking views of the interstellar horizon, this tiny house offers a luxurious escape for space adventure enthusiasts seeking a minimalist lifestyle. Embrace the essence of simplicity and elegance as you immerse yourself in the compact yet thoughtfully designed living spaces, clever storage solutions, and eco-friendly features that harmoniously blend with the unique environment of Uranus. Discover the celestial beauty of Uranus from the cozy comfort of your own sky-bound tiny house retreat.",
+  equipments: Equipment.where(name: ['Millennium Falcon parking'])
+)
+
+flat7.images.attach(io: File.open(Rails.root.join('app/assets/images/flat7.png')), filename: 'flat7.png')
+
+flat8 = Flat.create!(
+  number_of_guests: 12,
+  price: 1190,
+  owner: users[0],
+  name: "Lunar Serenity Residence",
+  planet: "Moon",
+  description: "The Lunar Serenity Residence offers a luxurious living experience in the serene landscapes of the Moon. With its modern architecture and panoramic views of the lunar landscape, this exceptional apartment provides a tranquil retreat for space enthusiasts. The sleek interior features cutting-edge technologies, while the comfortable furnishings and large windows create a harmonious atmosphere. Residents can enjoy the fully equipped kitchen, cozy bedrooms with panoramic views, and a relaxing bathroom. Exclusive amenities include a state-of-the-art fitness center, lunar spa, and private lunar garden. Immerse yourself in the serenity of the Moon at the Lunar Serenity Residence.",
+  equipments: Equipment.where(name: ['Millennium Falcon parking', 'Holographic cinema room', 'Stargate', 'AI home system', 'Advanced recycling and waste management system'])
+)
+
+flat8.images.attach(io: File.open(Rails.root.join('app/assets/images/flat8.png')), filename: 'flat8.png')
+
 puts "Created flats"
 
 puts "Creating bookings"
