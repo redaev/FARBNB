@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container col-6">
+<div class="card-booking">
   <%= simple_form_for [@flat] do |f| %>
     <%= f.input :name, placeholder: 'Enter the name of your flat' %>
     <%= f.input :planet, placeholder: 'Enter the planet where your flat is located' %>
@@ -6,7 +7,9 @@
     <%= f.label :price %><i class="fa-brands fa-rebel" style="color: #71a4ac; margin-left: 5px;"></i>
     <%= f.input :price , placeholder: 'Enter the price per nigth', label: false %>
     <%= f.input :number_of_guests, placeholder: 'Enter the number of guests your flight can welcome' %>
+</div>
 
+<div class="card-booking">
     <h4>Select Equipment:</h4>
     <% @equipment.each do |equipment| %>
       <div>
@@ -14,10 +17,12 @@
         <%= label_tag "flat_equipment_ids_#{equipment.id}", equipment.name %>
       </div>
     <% end %>
+</div>
 
+<div class="card-booking">
     <h4>Upload Images:</h4>
-    <%= f.input :images, as: :file, input_html: { multiple: true } %>
-
-    <%= f.submit %>
+    <%= f.input :images, as: :file, input_html: { multiple: true} %>
+    <%= f.submit "Create flat", class: "search_btn mt-2 text-center" %>
   <% end %>
+</div>
 </div>
