@@ -9,7 +9,6 @@ body {
   height: 300px;
   display: flex;
   margin-bottom: 20px;
-
 }
 
 .card-body {
@@ -22,6 +21,8 @@ body {
  .card {
   margin-right: 20px;
   background: #ffffff;
+  margin-bottom: 30px;
+
  }
  .card-bottom{
   vertical-align: bottom;
@@ -34,5 +35,10 @@ body {
 i{
   color: #DD58D6;
   margin-right: 8px;
-
+}
+.card-link{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
 }

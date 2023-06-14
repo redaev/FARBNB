@@ -3,47 +3,46 @@
     <div class="col">
       <div class="search_container">
         <%= form_tag research_flats_path, method: :get, class: 'form-inline' do %>
-        <div id="search_field">
-          <div>Planet</div>
-          <%= text_field_tag :planet, params[:planet], placeholder: "Search for a planet" %>
-        </div>
-        <div id="search_field">
-          <div>Number of travelers</div>
-          <%= text_field_tag :number_of_guests, params[:number_of_guests], placeholder: "Number of guests" %>
-        </div>
-        <div>
-          <%= submit_tag "GO", class: 'search_btn' %>
-        </div>
-      <% end %>
-
+          <div id="search_field">
+            <div>Planet</div>
+            <%= text_field_tag :planet, params[:planet], placeholder: "Search for a planet" %>
+          </div>
+          <div id="search_field">
+            <div>Number of travelers</div>
+            <%= text_field_tag :number_of_guests, params[:number_of_guests], placeholder: "Number of guests" %>
+          </div>
+          <div>
+            <%= submit_tag "GO", class: 'search_btn' %>
+          </div>
+        <% end %>
       </div>
 
-
-
-<div class="d-flex flex-row">
-  <% @flats.each do |flat| %>
-    <%= link_to flat_path(flat.id), :action => 'go' do %>
-      <div class="card" style="width: 18rem;">
-        <% if flat.images.attached? %>
-          <%= image_tag url_for(flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
-        <% else %>
-          <p>No image available</p>
-        <% end %>
-        <div class="card-body">
-          <h4 class="card-title"><%= flat.name %></h4>
-          <p class="card-text"><%= flat.planet %></p>
-          <div class="card-bottom">
-            <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i><%= flat.price %> / night
-            <br>
-            <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
-          </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          <% @flats.each do |flat| %>
+            <div class="col">
+              <%= link_to flat_path(flat.id), :action => 'go', class: 'card-link' do %>
+                <div class="card" >
+                  <% if flat.images.attached? %>
+                    <%= image_tag url_for(flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
+                  <% else %>
+                    <p>No image available</p>
+                  <% end %>
+                  <div class="card-body">
+                    <h4 class="card-title text-truncate"><%= flat.name %></h4>
+                    <p class="card-text"><%= flat.planet %></p>
+                    <div class="card-bottom">
+                      <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i><%= flat.price %> / night
+                      <br>
+                      <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-    <% end %>
-  </div>
- <% end %>
-</div>
-
       </div>
     </div>
   </div>
-</body>
+</div>
