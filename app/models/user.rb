@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :telepathic_code, presence: true, uniqueness: true
   validates :specie, presence: true
+  has_many :bookings
 end
