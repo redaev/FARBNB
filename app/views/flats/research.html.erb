@@ -1,37 +1,32 @@
 <body>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-<div class="d-flex flex-row">
-    <div id="flats">
-      <% @flats.each do |flat| %>
-        <%= link_to flat_path(flat.id), :action => 'go' do %>
-          <div class="card" style="width: 18rem;">
-          <img src="<%= asset_path('villa.png') %>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h4 class="card-title"><%= flat.name %></h4>
-            <p class="card-text"><%= flat.planet %></p>
-            <div class="card-bottom">
-              <i class="fa-solid fa-euro-sign"></i><%= flat.price %> per night
-              <br>
-              <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex flex-row">
+          <div id="flats">
+            <% if @flats.empty? %>
+              <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn btn-warning' %></p>
+            <% else %>
+              <% @flats.each do |flat| %>
+                <%= link_to flat_path(flat.id) do %>
+                  <div class="card" style="width: 18rem;">
+                    <img src="<%= asset_path('villa.png') %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h4 class="card-title"><%= flat.name %></h4>
+                      <p class="card-text"><%= flat.planet %></p>
+                      <div class="card-bottom">
+                        <i class="fa-solid fa-euro-sign"></i><%= flat.price %> per night
+                        <br>
+                        <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
-    <% end %>
     </div>
   </div>
-</div>
 </body>
-
-
-
-
-
-    </div>
-  </div>
-</div>
