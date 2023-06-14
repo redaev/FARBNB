@@ -1,6 +1,10 @@
-<h1>Booking Confirmed!</h1>
-<p>Your booking has been successfully created.</p>
-
-<button type="button" class="btn btn-dark">
-  <li><%= link_to "Going to my account", flat_dashboard_path %></li>
-</button>
+<div class="container col-6">
+    <%= image_tag("confimation.jpg", size: "75x75") %>
+    <div class="section-infos">
+      <h1>Booking Confirmed!</h1>
+      <p>Your booking has been successfully created.</p>
+    </div>
+  <button type="button" class="btn-ghost">
+    <%= link_to "Go to my account", flat_dashboard_path %>
+  </button>
+</div>
