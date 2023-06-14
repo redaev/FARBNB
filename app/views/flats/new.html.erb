@@ -10,7 +10,7 @@
 </div>
 
 <div class="card-booking">
-    <h4>Select Equipment:</h4>
+    <h5>Select Equipment:</h5>
     <% @equipment.each do |equipment| %>
       <div>
         <%= check_box_tag 'flat[equipment_ids][]', equipment.id, @flat.equipments.include?(equipment) %>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="card-booking">
-    <h4>Upload Images:</h4>
+    <h5>Upload Images:</h5>
     <%= f.input :images, as: :file, input_html: { multiple: true} %>
     <%= f.submit "Create flat", class: "search_btn mt-2 text-center" %>
   <% end %>
