@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="show-header">
-        <h2>Here are your last booking</h2>
+        <h2>Here are your last bookings</h2>
         <div class="d-flex flex-row">
           <% @bookings.each do |booking| %>
             <div class="card" style="width: 18rem;">
@@ -19,8 +19,8 @@
                 <p>Departure Date: <%= booking.departure_date %></p>
                 <p>Status: <%= booking.status.capitalize %></p>
                 <% if booking.status == 'pending' %>
-                  <%= link_to 'Approve', approve_flat_booking_path(booking.flat, booking), method: :put %>
-                  <%= link_to 'Reject', reject_flat_booking_path(booking.flat, booking), method: :put %>
+                  <%= link_to 'Approve', approve_flat_booking_path(booking.flat, booking), method: :put, class: "search_btn" %>
+                  <%= link_to 'Reject', reject_flat_booking_path(booking.flat, booking), method: :put,  class: "search_btn" %>
                 <% end %>
               </div>
             </div>
