@@ -1,4 +1,7 @@
 <div class="container col-6">
+ <div class="section-infos">
+  <h1>List your property on Farbnb</h1>
+ </div>
 <div class="card-booking">
   <%= simple_form_for [@flat] do |f| %>
     <%= f.input :name, placeholder: 'Enter the name of your flat' %>
@@ -22,7 +25,7 @@
 <div class="card-booking">
     <h4>Upload Images:</h4>
     <%= f.input :images, as: :file, input_html: { multiple: true} %>
-    <%= f.submit "Create flat", class: "search_btn mt-2 text-center" %>
+    <%= f.submit "Register your flat and start earning Solaris !", class: "search_btn mt-2 text-center" %>
   <% end %>
 </div>
 </div>
