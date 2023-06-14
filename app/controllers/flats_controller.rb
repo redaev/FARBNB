@@ -11,7 +11,7 @@ class FlatsController < ApplicationController
   end
 
   def research
-    @flats = Flat.where(planet: params[:planet], number_of_guests: params[:number_of_guests])
+    @flats = Flat.where('planet ILIKE ?', params[:planet]).where('number_of_guests >= ?', params[:number_of_guests])
   end
 
   def new
