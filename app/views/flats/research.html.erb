@@ -4,18 +4,23 @@
       <div class="col">
         <div class="d-flex flex-row">
           <div id="flats">
+          <h1>Those flats may interest you</h1>
             <% if @flats.empty? %>
               <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn btn-warning' %></p>
             <% else %>
               <% @flats.each do |flat| %>
                 <%= link_to flat_path(flat.id) do %>
                   <div class="card" style="width: 18rem;">
-                    <img src="<%= asset_path('villa.png') %>" class="card-img-top" alt="...">
+                    <% if flat.images.attached? %>
+                      <%= image_tag url_for(flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
+                    <% else %>
+                     <p>No image available</p>
+                    <% end %>
                     <div class="card-body">
                       <h4 class="card-title"><%= flat.name %></h4>
                       <p class="card-text"><%= flat.planet %></p>
                       <div class="card-bottom">
-                        <i class="fa-solid fa-euro-sign"></i><%= flat.price %> per night
+                        <i class="fa-brands fa-rebel" style="color: #71a4ac;"></i><%= flat.price %> per night
                         <br>
                         <i class="fa-solid fa-user-group"></i><%= flat.number_of_guests %> travelers
                       </div>
