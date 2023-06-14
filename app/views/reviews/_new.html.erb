@@ -19,8 +19,8 @@
 </div>
 
 
-
-  <h1>Add a new review</h1>
+<div class="add-review-box">
+  <h3>Add a new review</h3>
   <%= simple_form_for [@flat, @review] do |f| %>
     <div class="form-group">
       <%= f.label :content, "Review" %>
@@ -30,6 +30,9 @@
       <%= f.label :rating, "Rating" %>
       <%= f.select :rating, options_for_select((1..5).map { |num| ["#{num}/5", num] }), { label: "Select a rating" }, class: "form-control" %>
     </div>
-    <%= f.submit "Submit review", class: "btn btn-primary" %>
+    <div class="button"></div>
+    <%= f.submit "Submit review", class: "btn" %>
+    </div>
   <% end %>
+</div>
 </div>

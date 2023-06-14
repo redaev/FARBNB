@@ -37,14 +37,14 @@
           <span class="input-group-text" id="end-date-label">To:</span>
           <%= form.text_field :departure_date, class: "form-control", placeholder: "18/10/2017", aria: { label: "end-date", describedby: "end-date-label" } %>
         </div>
-        <%= form.submit "Book this experience", class: "search_btn mt-2 text-center", style: "width: 100%" %>
+        <%= form.submit "Book this experience", class: "search_btn mt-2 text-center",  style: "width: 100%" %>
       <% end %>
     </div>
   </div>
   </div>
 <div class="show-card-review col-8">
   <div class="card-review">
-    <h1>Reviews</h1>
+    <h2>Reviews</h2>
     <%= render partial: 'reviews/new', locals: { flat: @flat } %>
   </div>
 </div>
