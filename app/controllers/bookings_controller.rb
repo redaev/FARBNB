@@ -19,8 +19,10 @@ class BookingsController < ApplicationController
   end
 
   def dashboard
-    @bookings = current_user.bookings.includes(:flat)
+    @bookings_as_tenant = current_user.bookings.includes(:flat)
+    @bookings_as_owner = Booking.includes(:flat).where(flats: { owner: current_user })
   end
+
 
   def approve
     if @booking.flat.owner == current_user
