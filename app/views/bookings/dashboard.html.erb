@@ -1,11 +1,27 @@
-<h2>Here are your last booking</h2>
-<% @bookings.each do |booking| %>
-  <div>
-    <h3>Booking Details</h3>
-    <p>Arrival Date: <%= booking.arrival_date %></p>
-    <p>Departure Date: <%= booking.departure_date %></p>
-    <h3>Flat Details</h3>
-    <p>Name: <%= booking.flat.name %></p>
-    <p>Planet: <%= booking.flat.planet %></p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="show-header">
+          <h2>Here are your last booking</h2>
+          <div class="d-flex flex-row">
+          <% @bookings.each do |booking| %>
+            <div class="card" style="width: 18rem;">
+              <% if booking.flat.images.attached? %>
+                <%= image_tag url_for(booking.flat.images.first), class: 'card-img-top', alt: 'Flat Image' %>
+              <% else %>
+                <p>No image available</p>
+              <% end %>
+              <div class="card-body">
+                <h4 class="card-title"><%= booking.flat.name %></h4>
+                <p class="card-text"><%= booking.flat.planet %></p>
+                <h3>Booking Details</h3>
+                <p>Arrival Date: <%= booking.arrival_date %></p>
+                <p>Departure Date: <%= booking.departure_date %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
