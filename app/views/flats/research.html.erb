@@ -4,10 +4,10 @@
       <div class="col">
         <div class="d-flex flex-row">
           <div id="flats">
-          <h1>Those flats may interest you</h1>
             <% if @flats.empty? %>
-              <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn btn-warning' %></p>
+              <p>No flats available. <%= button_to 'Go back to homepage', root_path, method: :get, class: 'btn-ghost' %></p>
             <% else %>
+             <h1>Those flats may interest you</h1>
               <% @flats.each do |flat| %>
                 <%= link_to flat_path(flat.id) do %>
                   <div class="card" style="width: 18rem;">
