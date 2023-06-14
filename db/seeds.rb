@@ -178,7 +178,7 @@ flat8 = Flat.create!(
   name: "Lunar Serenity Residence",
   planet: "Moon",
   description: "The Lunar Serenity Residence offers a luxurious living experience in the serene landscapes of the Moon. With its modern architecture and panoramic views of the lunar landscape, this exceptional apartment provides a tranquil retreat for space enthusiasts. The sleek interior features cutting-edge technologies, while the comfortable furnishings and large windows create a harmonious atmosphere. Residents can enjoy the fully equipped kitchen, cozy bedrooms with panoramic views, and a relaxing bathroom. Exclusive amenities include a state-of-the-art fitness center, lunar spa, and private lunar garden. Immerse yourself in the serenity of the Moon at the Lunar Serenity Residence.",
-  equipments: Equipment.where(name: ['Millennium Falcon parking', 'Holographic cinema room', 'Stargate', 'AI home system', 'Advanced recycling and waste management system'])
+  equipments: Equipment.where(name: ['Plasma Pool', 'Millennium Falcon parking', 'Holographic cinema room', 'Stargate', 'AI home system', 'Advanced recycling and waste management system'])
 )
 
 flat8.images.attach(io: File.open(Rails.root.join('app/assets/images/flat8.png')), filename: 'flat8.png')
