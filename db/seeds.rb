@@ -80,7 +80,7 @@ flat1 = Flat.create!(
   owner: users[0],
   name: "Mars Rooftop",
   planet: "Mars",
-  description: "Bienvenue sur notre propriété où vous attend un chalet en bois indépendant avec terrasse privative au milieu des pins. Site privilégié à 15 min de l'astroport, au calme, propice au repos, à la méditation, à l'écriture, à la découverte de Mars (ses marchés, festivals de musique classique...)",
+  description: "Welcome to the futuristic haven of Mars Rooftop, where your dreams of an otherworldly living experience come to life. Perched high above the red Martian landscape, this exquisite flat offers unparalleled views of the breathtaking cosmic horizon. Immerse yourself in a world of technological marvels and advanced comforts, designed to cater to your every desire. The sleek and minimalist interior is adorned with cutting-edge holographic displays, seamlessly merging the realms of art and innovation. Indulge in the ultimate escape from reality as you unwind in the zero-gravity relaxation pods or gaze upon the distant stars from the state-of-the-art observatory. Mars Rooftop: where tomorrow meets today.",
   equipments: Equipment.where(name: ['Stargate', 'Millennium Falcon parking'])
 )
 
@@ -90,9 +90,12 @@ flat2 = Flat.create!(
   number_of_guests: 6,
   price: 658,
   owner: users[1],
-  name: "Maison dans les arbres",
+  name: "Venus Bay Estate",
   planet: "Venus",
-  description: "Bienvenue dans notre grande maison avec piscine, située dans le sud de Venus, à 15 minutes de la faille du pendu.",
+  description: "The Venus Bay Estate is nestled in a peaceful corner of space, offering a luxurious getaway for space adventure enthusiasts. This unique property is located on the planet Venus, where you will be enchanted by the extraterrestrial landscapes and breathtaking views of the interstellar horizon.
+  Upon arrival at this exclusive residence, you will be greeted by futuristic architecture and an elegant facade. The house stands majestically on a spacious plot, surrounded by an exotic garden that seems to come straight out of an extraterrestrial dream.
+  As you enter the house, you will immediately be struck by the contemporary design and high-tech features that blend perfectly with the space environment. The solar glass transparent walls will allow you to enjoy abundant natural light while admiring the cosmic beauty of Venus.
+  This exceptional house offers generous living space with open and airy areas. The main living room features sleek lines, elegant furniture, and a futuristic fireplace that creates a warm and cozy atmosphere. High ceilings and panoramic windows maximize the view of the starry sky.",
   equipments: Equipment.where(name: ['Gamma Washing / Dryer', 'Plasma Pool'])
 )
 
@@ -104,7 +107,9 @@ flat3 = Flat.create!(
   owner: users[2],
   name: "Cocoon on the moon",
   planet: "Moon",
-  description: "Situé dans un petit village à 10 mins des plages de Moon-sur-mer. Sur un terrain paysager et forestier de 1,2 ha.",
+  description: "Welcome to the Lunar Heights! Step into a captivating future where lunar living meets earthly comforts. This stunning flat rental on the Moon promises an otherworldly experience like no other.
+  Perched on the lunar surface, this state-of-the-art flat boasts panoramic windows, allowing you to gaze upon the breathtaking expanse of space. Witness Earthrise and Earthset in a spectacular dance of celestial beauty. Immerse yourself in the surreal tranquility as you drift weightlessly through each room, with a gravity generator providing the perfect balance between the moon's gentle pull and terrestrial ease.
+  Designed with futuristic elegance, the interior of this lunar haven is a fusion of minimalist chic and cosmic allure. Experience the luxury of a fully equipped zero-gravity relaxation chamber, where stress dissipates, and rejuvenation takes flight. The lunar balcony beckons, offering an unobstructed view of the Moon's craters, providing an ideal setting for stargazing so close, you could almost touch the constellations.",
   equipments: [Equipment.find_by(name: 'Adjustable Gravity Gym')]
 )
 

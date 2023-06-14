@@ -19,11 +19,7 @@
       </div>
     </div>
 
-    <% @flat.images.each do |image| %>
-      <div class="show-img">
-        <%= image_tag(image) %>
-      </div>
-    <% end %>
+
 
 
     <div class="show-img" style="<%= @flat.images.attached? ? "background-image: url(#{url_for(@flat.images.first)})" : "" %>">
